@@ -9,10 +9,9 @@ import com.bumptech.glide.request.RequestOptions
 import com.tomislav.novacic.gitbrowser.extensions.formatDateString
 import com.tomislav.novacic.gitbrowser.R
 import com.tomislav.novacic.gitbrowser.data.source.model.Repository
+import com.tomislav.novacic.gitbrowser.Constants.Companion.DATE_INPUT_FORMAT
+import com.tomislav.novacic.gitbrowser.Constants.Companion.DATE_OUTPUT_FORMAT
 import kotlinx.android.synthetic.main.item_repository.view.*
-
-private const val DATE_INPUT_FORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'"
-private const val DATE_OUTPUT_FORMAT = "dd.MM.yyyy"
 
 class RepositoriesAdapter(val data: ArrayList<Repository>, private val onClick: OnClick) : RecyclerView.Adapter<RepositoriesAdapter.RepositoryViewHolder>() {
 
@@ -20,13 +19,13 @@ class RepositoriesAdapter(val data: ArrayList<Repository>, private val onClick: 
 
         fun bind(repository: Repository, onClick: OnClick) {
             Glide.with(itemView.context)
-                .load(repository.owner.avatarUrl)
+                .load(repository.owner?.avatarUrl)
                 .apply(RequestOptions.circleCropTransform())
                 .placeholder(R.drawable.ic_avatar_placeholder)
                 .into(itemView.avatar)
             itemView.repositoryName.text = repository.name
-            itemView.owner.text = repository.owner.login
-            itemView.updateDate.text = repository.updatedAt.formatDateString(DATE_INPUT_FORMAT, DATE_OUTPUT_FORMAT)
+            itemView.owner.text = repository.owner?.login
+            itemView.updateDate.text = repository.updatedAt?.formatDateString(DATE_INPUT_FORMAT, DATE_OUTPUT_FORMAT)
             itemView.watchersCount.text = repository.watchersCount.toString()
             itemView.forkCount.text = repository.forksCount.toString()
             itemView.issueCount.text = repository.openIssuesCount.toString()

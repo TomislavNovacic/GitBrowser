@@ -14,14 +14,15 @@ import com.tomislav.novacic.gitbrowser.helpers.SearchHelper.Companion.SORT_OPTIO
 import com.tomislav.novacic.gitbrowser.helpers.SearchHelper.Companion.order
 import com.tomislav.novacic.gitbrowser.helpers.SearchHelper.Companion.setSortOption
 import com.tomislav.novacic.gitbrowser.helpers.SearchHelper.Companion.sortOption
+import com.tomislav.novacic.gitbrowser.ui.repositoryDetails.RepositoryDetailsActivity
 import kotlinx.android.synthetic.main.activity_search.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class SearchActivity : BaseActivity(), OnClick {
 
     private val viewModel: SearchViewModel by viewModel()
-    private lateinit var repositoriesAdapter: RepositoriesAdapter
-    private val repositoryList = arrayListOf<Repository>()
+    private val repositoriesAdapter by lazy { RepositoriesAdapter(repositoryList, this) }
+    private val repositoryList by lazy { arrayListOf<Repository>() }
 
     override fun provideLayout() = R.layout.activity_search
 
@@ -36,7 +37,7 @@ class SearchActivity : BaseActivity(), OnClick {
                     noRepositoriesImg.visibility = View.GONE
                 }
                 repositoryList.clear()
-                repositoryList.addAll(it!!.repositories)
+                repositoryList.addAll(it?.repositories!!)
                 repositoriesAdapter.notifyDataSetChanged()
             } ?: run {
                 noRepositoriesImg.visibility = View.VISIBLE
@@ -54,12 +55,11 @@ class SearchActivity : BaseActivity(), OnClick {
             false
         }
 
-        repositoriesAdapter = RepositoriesAdapter(repositoryList, this)
         recyclerView.addItemDecoration(DividerItemDecoration(applicationContext, LinearLayout.VERTICAL))
         recyclerView.adapter = repositoriesAdapter
     }
 
     override fun onRepositoryClick(repository: Repository) {
-        TODO("Not yet implemented")
+        startActivity(RepositoryDetailsActivity.newInstance(applicationContext, repository))
     }
 }

@@ -20,9 +20,17 @@
     </style>
 
     <style name="Icon">
-        <item name="android:layout_width">@dimen/icon_width</item>
-        <item name="android:layout_height">@dimen/icon_height</item>
         <item name="android:layout_margin">@dimen/margin_small</item>
+    </style>
+
+    <style name="Icon.Small" parent="Icon">
+        <item name="android:layout_width">@dimen/icon_width_small</item>
+        <item name="android:layout_height">@dimen/icon_height_small</item>
+    </style>
+
+    <style name="Icon.Medium" parent="Icon">
+        <item name="android:layout_width">@dimen/icon_width_medium</item>
+        <item name="android:layout_height">@dimen/icon_height_medium</item>
     </style>
 
 </resources>

@@ -6,6 +6,10 @@
     <dimen name="margin_XL">24dp</dimen>
     <dimen name="avatar_width">40dp</dimen>
     <dimen name="avatar_height">40dp</dimen>
-    <dimen name="icon_width">16dp</dimen>
-    <dimen name="icon_height">16dp</dimen>
+    <dimen name="icon_width_small">16dp</dimen>
+    <dimen name="icon_height_small">16dp</dimen>
+    <dimen name="icon_width_medium">24dp</dimen>
+    <dimen name="icon_height_medium">24dp</dimen>
+    <dimen name="icon_width_large">60dp</dimen>
+    <dimen name="icon_height_large">60dp</dimen>
 </resources>

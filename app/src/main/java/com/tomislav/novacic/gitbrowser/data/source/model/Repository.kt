@@ -1,98 +1,99 @@
 package com.tomislav.novacic.gitbrowser.data.source.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
-class Repository {
+@Parcelize
+data class Repository(
     @SerializedName("id")
     @Expose
-    val id: Int? = null
-
+    val id: Int?,
     @SerializedName("node_id")
     @Expose
-    lateinit var nodeId: String
-
+    val nodeId: String?,
     @SerializedName("name")
     @Expose
-    lateinit var name: String
+    val name: String?,
 
     @SerializedName("full_name")
     @Expose
-    lateinit var fullName: String
+    val fullName: String?,
 
     @SerializedName("owner")
     @Expose
-    lateinit var owner: Owner
+    val owner: Owner?,
 
     @SerializedName("private")
     @Expose
-    var private: Boolean? = null
+    val private: Boolean?,
 
     @SerializedName("html_url")
     @Expose
-    lateinit var htmlUrl: String
+    val htmlUrl: String?,
 
     @SerializedName("description")
     @Expose
-    lateinit var description: String
+    val description: String?,
 
     @SerializedName("fork")
     @Expose
-    val fork: Boolean? = null
+    val fork: Boolean?,
 
     @SerializedName("url")
     @Expose
-    lateinit var url: String
+    val url: String?,
 
     @SerializedName("created_at")
     @Expose
-    lateinit var createdAt: String
+    val createdAt: String?,
 
     @SerializedName("updated_at")
     @Expose
-    lateinit var updatedAt: String
+    val updatedAt: String?,
 
     @SerializedName("pushed_at")
     @Expose
-    lateinit var pushedAt: String
+    val pushedAt: String?,
 
     @SerializedName("homepage")
     @Expose
-    lateinit var homepage: String
+    val homepage: String?,
 
     @SerializedName("size")
     @Expose
-    val size: Int? = null
+    val size: Int?,
 
     @SerializedName("stargazers_count")
     @Expose
-    val stargazersCount: Int? = null
+    val stargazersCount: Int?,
 
     @SerializedName("watchers_count")
     @Expose
-    val watchersCount: Int? = null
+    val watchersCount: Int?,
 
     @SerializedName("language")
     @Expose
-    lateinit var language: String
+    val language: String?,
 
     @SerializedName("forks_count")
     @Expose
-    val forksCount: Int? = null
+    val forksCount: Int?,
 
     @SerializedName("open_issues_count")
     @Expose
-    val openIssuesCount: Int? = null
+    val openIssuesCount: Int?,
 
     @SerializedName("master_branch")
     @Expose
-    lateinit var masterBranch: String
+    val masterBranch: String?,
 
     @SerializedName("default_branch")
     @Expose
-    lateinit var defaultBranch: String
+    val defaultBranch: String?,
 
     @SerializedName("score")
     @Expose
-    val score: Int? = null
-}
+    val score: Int?
+) : Parcelable

@@ -2,4 +2,5 @@
     <string name="app_name">GitBrowser</string>
     <string name="search_hint">Search…</string>
     <string name="no_repositories_label">No repositories found!</string>
+    <string name="last_update_label">Last updated on: %1$s</string>
 </resources>

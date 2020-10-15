@@ -1,78 +1,81 @@
 package com.tomislav.novacic.gitbrowser.data.source.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
-class Owner {
+@Parcelize
+data class Owner(
     @SerializedName("login")
     @Expose
-    lateinit var login: String
+    val login: String?,
 
     @SerializedName("id")
     @Expose
-    var id: Int? = null
+    val id: Int?,
 
     @SerializedName("node_id")
     @Expose
-    lateinit var nodeId: String
+    val nodeId: String?,
 
     @SerializedName("avatar_url")
     @Expose
-    lateinit var avatarUrl: String
+    val avatarUrl: String?,
 
     @SerializedName("gravatar_id")
     @Expose
-    lateinit var gravatarId: String
+    val gravatarId: String?,
 
     @SerializedName("url")
     @Expose
-    lateinit var url: String
+    val url: String?,
 
     @SerializedName("received_events_url")
     @Expose
-    lateinit var receivedEventsUrl: String
+    val receivedEventsUrl: String?,
 
     @SerializedName("type")
     @Expose
-    lateinit var type: String
+    val type: String?,
 
     @SerializedName("html_url")
     @Expose
-    lateinit var htmlUrl: String
+    val htmlUrl: String?,
 
     @SerializedName("followers_url")
     @Expose
-    lateinit var followersUrl: String
+    val followersUrl: String?,
 
     @SerializedName("following_url")
     @Expose
-    lateinit var followingUrl: String
+    val followingUrl: String?,
 
     @SerializedName("gists_url")
     @Expose
-    lateinit var gistsUrl: String
+    val gistsUrl: String?,
 
     @SerializedName("starred_url")
     @Expose
-    lateinit var starredUrl: String
+    val starredUrl: String?,
 
     @SerializedName("subscriptions_url")
     @Expose
-    lateinit var subscriptionsUrl: String
+    val subscriptionsUrl: String?,
 
     @SerializedName("organizations_url")
     @Expose
-    lateinit var organizationsUrl: String
+    val organizationsUrl: String?,
 
     @SerializedName("repos_url")
     @Expose
-    lateinit var reposUrl: String
+    val reposUrl: String?,
 
     @SerializedName("events_url")
     @Expose
-    lateinit var eventsUrl: String
+    val eventsUrl: String?,
 
     @SerializedName("site_admin")
     @Expose
-    val siteAdmin: Boolean? = null
-}
+    val siteAdmin: Boolean?,
+) : Parcelable

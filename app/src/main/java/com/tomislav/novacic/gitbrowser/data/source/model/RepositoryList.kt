@@ -3,16 +3,16 @@ package com.tomislav.novacic.gitbrowser.data.source.model
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-class RepositoryList {
+data class RepositoryList(
     @SerializedName("total_count")
     @Expose
-    var totalCount: Int? = null
+    val totalCount: Int?,
 
     @SerializedName("incomplete_results")
     @Expose
-    var incompleteResults: Boolean? = null
+    val incompleteResults: Boolean?,
 
     @SerializedName("items")
     @Expose
-    lateinit var repositories: List<Repository>
-}
+    val repositories: List<Repository>?
+)

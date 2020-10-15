@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.repositoryDetails.RepositoryDetailsActivity">
+
+    <ImageView
+        android:id="@+id/ownerImg"
+        android:layout_width="@dimen/icon_width_large"
+        android:layout_height="@dimen/icon_height_large"
+        android:layout_margin="@dimen/margin_large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/owner"
+        style="@style/Label.WithHorizontalMargins"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/ownerImg"
+        app:layout_constraintStart_toEndOf="@id/ownerImg"
+        app:layout_constraintTop_toTopOf="@id/ownerImg"
+        tools:text="@tools:sample/full_names" />
+
+    <TextView
+        android:id="@+id/updateDate"
+        style="@style/Label"
+        android:layout_marginStart="@dimen/margin_XL"
+        android:layout_marginTop="@dimen/margin_large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ownerImg"
+        tools:text="Last updated on: 15.10.2020" />
+
+    <ImageView
+        android:id="@+id/watchersIcon"
+        style="@style/Icon.Medium"
+        android:src="@drawable/ic_watchers"
+        app:layout_constraintEnd_toStartOf="@+id/forksIcon"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/updateDate"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/watchersCount"
+        style="@style/Label"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/watchersIcon"
+        app:layout_constraintStart_toStartOf="@id/watchersIcon"
+        app:layout_constraintTop_toBottomOf="@id/watchersIcon"
+        tools:text="20" />
+
+    <ImageView
+        android:id="@+id/forksIcon"
+        style="@style/Icon.Medium"
+        android:src="@drawable/ic_fork"
+        app:layout_constraintEnd_toStartOf="@+id/issuesIcon"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/watchersIcon"
+        app:layout_constraintTop_toBottomOf="@id/updateDate"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/forkCount"
+        style="@style/Label"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/forksIcon"
+        app:layout_constraintStart_toStartOf="@id/forksIcon"
+        app:layout_constraintTop_toBottomOf="@id/forksIcon"
+        tools:text="10" />
+
+    <ImageView
+        android:id="@+id/issuesIcon"
+        style="@style/Icon.Medium"
+        android:src="@drawable/ic_issues"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/forksIcon"
+        app:layout_constraintTop_toBottomOf="@id/updateDate"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/issueCount"
+        style="@style/Label"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/issuesIcon"
+        app:layout_constraintStart_toStartOf="@id/issuesIcon"
+        app:layout_constraintTop_toBottomOf="@id/issuesIcon"
+        tools:text="15" />
+
+    <TextView
+        android:id="@+id/repoName"
+        style="@style/Label"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_XL"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/watchersCount"
+        tools:text="GitBrowser" />
+
+    <TextView
+        android:id="@+id/description"
+        style="@style/Label"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/repoName"
+        tools:text="This is a description." />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
